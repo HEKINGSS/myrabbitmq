@@ -19,12 +19,13 @@ public class MyListener {
     public void receiver(Message message, Channel channel) throws Exception {
         log.info(new String(message.getBody()));
         log.info("retry couunt: {}", retryCount++);
-        LocalDateTime now = LocalDateTime.now();
-        if (now.getSecond() / 0 != 0) {
-            throw new Exception("error");
-        } else {
-            retryCount = 0;
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-        }
+//        int a = 1 / 0;
+//        LocalDateTime now = LocalDateTime.now();
+//        if (now.getSecond() / 0 != 0) {
+//            throw new Exception("error");
+//        } else {
+//            retryCount = 0;
+//            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+//        }
     }
 }

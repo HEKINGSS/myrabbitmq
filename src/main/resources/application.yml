@@ -1,15 +1,20 @@
 server:
   port: 8080
-
 spring:
   application:
     name: my-rabbitmq
+  profiles:
+    active: dev
+  config:
+    import: optional:file:.env[.properties]
   rabbitmq:
     virtual-host: /
-    host: 127.0.0.1
+    host: localhost
     port: 5672
-    username: admin
-    password: 123456
+    username: ${MQ_USERNAME}
+    password: ${MQ_PASSWORD}
+    publisher-confirm-type: correlated
+    publisher-returns: true
     listener:
       type: simple
       simple:

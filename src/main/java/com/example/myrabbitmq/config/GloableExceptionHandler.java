@@ -3,7 +3,7 @@ package com.example.myrabbitmq.config;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-@RestControllerAdvice
+//@RestControllerAdvice
 public class GloableExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
